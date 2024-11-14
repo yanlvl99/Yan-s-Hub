@@ -8,6 +8,23 @@ function GetCurrentSea()
     end
 end
 
-function AddStatPoints(Type,Quantity)
-    CommF_:InvokeServer("AddPoint",Type or "Melee",Quantity or 1)
+function AddStatPoints(Type, Quantity)
+    Type = Type or "Melee"
+    Quantity = Quantity or 1
+    
+    if Type ~= "Melee" and Type ~= "Defense" and Type ~= "Sword" and Type ~= "Blox Fruit" then
+        warn("Invalid stat type: " .. tostring(Type))
+        return false
+    end
+    
+    if not tonumber(Quantity) or Quantity <= 0 then
+        warn("Invalid quantity: " .. tostring(Quantity))
+        return false
+    end
+    
+    local success, result = pcall(function()
+        CommF_:InvokeServer("AddPoint", Type, Quantity)
+    end)
+    
+    return success
 end
