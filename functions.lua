@@ -1,8 +1,7 @@
 function GetCurrentSea()
-    local hasLocation = LocationsFolder:FindFirstChild()
-    if hasLocation("Mansion") and not hasLocation("Café") then
+    if LocationsFolder:FindFirstChild("Mansion") and not LocationsFolder:FindFirstChild("Café") then
         return "Third Sea"
-    elseif hasLocation("Café") then
+    elseif LocationsFolder:FindFirstChild("Café") then
         return "Second Sea"
     else
         return "First Sea"
