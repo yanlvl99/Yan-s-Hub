@@ -1,4 +1,3 @@
-print("3")
 Format, State, Tool, Roblox = {}, {}, {}, {}
 Format.__index, State.__index, Tool.__index, Roblox.__index = Format, State, Tool, Roblox
 
