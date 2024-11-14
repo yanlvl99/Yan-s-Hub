@@ -1,5 +1,5 @@
 function GetCurrentSea()
-    local hasLocation = LocationsFolder.FindFirstChild
+    local hasLocation = LocationsFolder:FindFirstChild()
     if hasLocation("Mansion") and not hasLocation("Café") then
         return "Third Sea"
     elseif hasLocation("Café") then
