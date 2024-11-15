@@ -62,7 +62,7 @@ function State:Humanoid(s)
 end
 
 function Gui:Visible(Gui)
-    return Gui.Visible = true 
+    Gui.Visible = true 
 end
 
 function Gui:Toggle(Gui)
@@ -70,7 +70,7 @@ function Gui:Toggle(Gui)
 end
 
 function Gui:Hide(Gui)
-    return Gui.Visible = false
+    Gui.Visible = false
 end
 
 
