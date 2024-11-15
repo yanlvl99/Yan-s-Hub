@@ -61,19 +61,6 @@ function State:Humanoid(s)
     return humanoid and humanoid:GetState() == Enum.HumanoidStateType[s] or false
 end
 
-function Gui:Visible(Gui)
-    Gui.Visible = true 
-end
-
-function Gui:Toggle(Gui)
-    Gui.Visible = not Gui.Visible
-end
-
-function Gui:Hide(Gui)
-    Gui.Visible = false
-end
-
-
 function State:NetworkOwner(a)
     if not a:IsA("BasePart") then return false end
     
