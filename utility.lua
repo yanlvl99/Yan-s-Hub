@@ -1,7 +1,7 @@
 Format, State, Tool, Roblox, Gui = {}, {}, {}, {}, {}
 Format.__index, State.__index, Tool.__index, Roblox.__index, Gui.__index = Format, State, Tool, Roblox, Gui
 
-Get, Set, Roblox = { Format = setmetatable({}, Format), State = setmetatable({}, State) }, { Tool = setmetatable({}, Tool) }, {Roblox = setmetatable({},Roblox)}
+Get, Set, Roblox, Gui = { Format = setmetatable({}, Format), State = setmetatable({}, State) }, { Tool = setmetatable({}, Tool) }, {Roblox = setmetatable({},Roblox)}, {Gui = setmetatable({},Gui)}
 
 function Format:Position(arg)
     if typeof(arg) == "BasePart" then 
