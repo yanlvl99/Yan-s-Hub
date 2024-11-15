@@ -1,5 +1,5 @@
-Format, State, Tool, Roblox = {}, {}, {}, {}
-Format.__index, State.__index, Tool.__index, Roblox.__index = Format, State, Tool, Roblox
+Format, State, Tool, Roblox, Gui = {}, {}, {}, {}, {}
+Format.__index, State.__index, Tool.__index, Roblox.__index, Gui.__index = Format, State, Tool, Roblox, Gui
 
 Get, Set, Roblox = { Format = setmetatable({}, Format), State = setmetatable({}, State) }, { Tool = setmetatable({}, Tool) }, {Roblox = setmetatable({},Roblox)}
 
@@ -61,6 +61,19 @@ function State:Humanoid(s)
     return humanoid and humanoid:GetState() == Enum.HumanoidStateType[s] or false
 end
 
+function Gui:Visible(Gui)
+    return Gui.Visible = true 
+end
+
+function Gui:Toggle(Gui)
+    Gui.Visible = not Gui.Visible
+end
+
+function Gui:Hide(Gui)
+    return Gui.Visible = false
+end
+
+
 function State:NetworkOwner(a)
     if not a:IsA("BasePart") then return false end
     
@@ -68,6 +81,10 @@ function State:NetworkOwner(a)
     local hrp = character and character:FindFirstChild("HumanoidRootPart")
     
     return (hrp and self:Distance(hrp, a) <= 350) or false
+end
+
+function State:InCombat()
+    return InCombat.Visible == true
 end
 
 function Tool:Equip(t)
